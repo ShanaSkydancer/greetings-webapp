@@ -1,0 +1,22 @@
+{
+  "name": "index.js",
+  "version": "1.0.0",
+  "description": "Greetings webapp page",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShanaSkydancer/greetings-webapp.git"
+  },
+  "author": "ShanaSkydancer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShanaSkydancer/greetings-webapp/issues"
+  },
+  "homepage": "https://github.com/ShanaSkydancer/greetings-webapp#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
