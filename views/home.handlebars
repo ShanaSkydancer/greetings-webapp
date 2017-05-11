@@ -1,0 +1,21 @@
+<h1>Hello there...</h1>
+
+<form id="fillForm" action="/greetings" method="post">
+  <h2>Enter your name:</h2>
+  <input id="usersName" type="text" name="usersName" placeholder="Name..."/>
+  <button id="greetButton" type="submit">Greet me!</button>
+
+  <div id= "radioButtons">
+  <input type="radio" name="radioButt" value="english"> English
+  <input type="radio" name="radioButt" value="afrikaans"> Afrikaans
+  <input type="radio" name="radioButt" value="xhosa"> isiXhosa
+  </div>
+</form>
+
+<div id="nameOutput">
+  {{#if name}}
+  <h3>Hello, {{name}}!</h3>
+  {{else}}
+  <h3>Welcome to the greeting page!</h3>
+  {{/if}}
+</div>

@@ -1,8 +1,8 @@
 {
-  "name": "index.js",
+  "name": "app.js",
   "version": "1.0.0",
   "description": "Greetings webapp page",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "mocha"
   },
@@ -18,5 +18,8 @@
   "homepage": "https://github.com/ShanaSkydancer/greetings-webapp#readme",
   "dependencies": {
     "express": "^4.15.2"
+  },
+  "devDependencies": {
+    "express-handlebars": "^3.0.0"
   }
 }

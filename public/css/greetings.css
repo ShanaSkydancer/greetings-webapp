@@ -1,0 +1,64 @@
+<style type="text/css">
+
+body {
+  background-color: #DDA0DD;
+  font-family: 'Eagle Lake', cursive;
+}
+
+h1 {
+  background: #DDA0DD;
+  font-family: 'Eagle Lake', cursive;
+  font-size: 75px;
+  background-color: #DDA0DD;
+  margin-top: 0;
+  text-align: center;
+}
+
+h2 {
+  font-size: 35px;
+  font-family: 'Eagle Lake', cursive;
+}
+
+h3 {
+  font-size: 20px;
+  font-family: 'Eagle Lake', cursive;
+  text-align: center;
+  margin-top: 2em;
+}
+
+#fillForm {
+  text-align: center;
+  margin-top: 6em;
+}
+
+#usersName {
+  width: 25%;
+  margin-left: 36em;
+  padding: 10px 20px;
+  border-radius: 3px;
+  display: block;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+button {
+  background-color: #8B008B;
+  font-size: 20px;
+  font-family: 'Eagle Lake', cursive;
+}
+
+button:hover {
+  background-color: #8A2BE2;
+}
+
+#radioButtons {
+  font-family: 'Eagle Lake', cursive;
+  font-size: 15px;
+  text-align: center;
+  padding-top: 3em;
+
+}
+
+
+</style>
