@@ -6,11 +6,14 @@ body {
 }
 
 h1 {
-  background: #DDA0DD;
+  /*background-image: url("http://4.bp.blogspot.com/-xc1JtQ3fHv8/VLQUNKGdkCI/AAAAAAAAAAo/h52sbqPCoxc/s1600/header.png");*/
+  /*background-image: url("https://www.askideas.com/media/65/Hello-Day-Wishes-Header-Image.jpg");*/
   font-family: 'Eagle Lake', cursive;
   font-size: 75px;
-  background-color: #DDA0DD;
-  margin-top: 0;
+  background: -webkit-linear-gradient(pink, #DDA0DD, purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /*background-color: #DDA0DD;*/
   text-align: center;
 }
 
@@ -26,9 +29,28 @@ h3 {
   margin-top: 2em;
 }
 
+a {
+  font-size: 20px;
+  font-family: 'Eagle Lake', cursive;
+  position: fixed;
+}
+
+#nameOutput {
+  font-size: 20px;
+  font-family: 'Eagle Lake', cursive;
+  text-align: center;
+}
+
+#countOutput {
+  font-size: 15px;
+  font-family: 'Eagle Lake', cursive;
+  text-align: right;
+}
+
+
 #fillForm {
   text-align: center;
-  margin-top: 6em;
+  /*margin-top: 6em;*/
 }
 
 #usersName {
@@ -42,8 +64,14 @@ h3 {
   outline: none;
 }
 
+.error {
+  font-size: 20px;
+  font-family: 'Eagle Lake', cursive;
+  text-align: center;
+}
+
 button {
-  background-color: #8B008B;
+  background-color: #DDA0DD;
   font-size: 20px;
   font-family: 'Eagle Lake', cursive;
 }
@@ -57,7 +85,6 @@ button:hover {
   font-size: 15px;
   text-align: center;
   padding-top: 3em;
-
 }
 
 

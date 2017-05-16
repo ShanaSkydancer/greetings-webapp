@@ -17,7 +17,10 @@
   },
   "homepage": "https://github.com/ShanaSkydancer/greetings-webapp#readme",
   "dependencies": {
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "express-flash": "git://github.com/RGBboy/express-flash.git",
+    "express-session": "^1.15.2",
+    "session-middleware": "^1.0.2"
   },
   "devDependencies": {
     "express-handlebars": "^3.0.0"
