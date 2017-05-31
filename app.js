@@ -9,7 +9,21 @@ const app = express();
 const $ = require("jquery");
 const selectedLang = require("./selectedLang");
 // const history = require("./history");
-// const theCounter = require("./counter");
+const theCounter = require("./counter");
+
+//Make you MongoDB connection URL configurable using an environment variable
+const mongoURL = process.env.MONGO_DB_URL || "'mongodb://<dbuser>:<dbpassword>@ds157641.mlab.com:57641/skydancer_db'";
+mongoose.connect(mongoURL);
+
+//Connect Mongoose to your .js and have it access the MongoBD
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/greetingmessages');
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  // we're connected!
+});
 
 // const historyRoutes = HistoryRoutes();
 // const nameRoutes = NameRouted();
@@ -29,13 +43,25 @@ app.use(bodyParser.urlencoded({
   extended : false
 }));
 
+var greetedSchema = mongoose.Schema({
+    name: String,
+    counter: Number,
+});
+
+var greetingMessgae = mongoose.model('greetingMessage', yourSchema);
+
+var newGreeting = new newGreeting({
+  name:  req.body.usersName,
+  counter: 1,
+});
+
 //session middleware
-app.use(session({
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
-}))
+// app.use(session({
+//   secret: 'keyboard cat',
+//   resave: false,
+//   saveUninitialized: true,
+//   cookie: { secure: true }
+// }))
 
 //Use flash for error messages
 app.use(flash());
@@ -68,30 +94,32 @@ app.post('/greetings', function(req, res){
   var usersNameList = {};
   var usersName = req.body.usersName;
   // usersNameList.push(usersName);
-  var times = 0;
+  // var times = 1;
   // console.log(usersName);
   var radioVal = req.body.radioButt;
   // console.log(radioVal);
   var greeting = selectedLang(radioVal, usersName);
   // var nameData = {greeting : greeting};
-  var nameData = {greeting : greeting, times: times};
+  var nameData = {greeting : greeting};
   // console.log(greeting);
   res.render("index", nameData);
 });
 
-// app.get('/counter', function(req, res){
-//   usersNameList.distinct("usersName", function(names){
-//    var nameCount = ""
-//    if(usersNameList.length === undefined){
-//
-//      nameCount = {times: 0};
-//    } else {
-//      nameCount = {times: usersNameList.length};
-//    };
-//    console.log(nameCount);
-//    res.render("counter", nameCount);
-//  });
-// });
+app.get('/counter', function(req, res){
+  var usersNameList = {};
+  var usersName = req.body.usersName;
+  usersNameList.push(usersName);
+  usersNameList.distinct("usersName", function(names){
+   var nameCount = ""
+   if(usersNameList.length === undefined){
+     nameCount = {times: 0};
+   } else {
+     nameCount = {times: usersNameList.length};
+   };
+   console.log(nameCount);
+   res.render("counter", nameCount);
+ });
+});
 
 //Hosts my server
 var server = app.listen(3000, function() {
